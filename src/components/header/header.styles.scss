@@ -1,0 +1,43 @@
+.header-container {
+  border-top: 1px solid transparent;
+  border-right: 1px solid transparent;
+  border-left: 1px solid transparent;
+  border-bottom: 1px solid black;
+  border-radius: 5px;
+  padding: 5px;
+
+  &:hover {
+    border: 1px solid black;
+    border-radius: 5px;
+    transition: 1s ease-in-out;
+  }
+
+  .header-innerContainer {
+    display: grid;
+    align-content: center;
+    height: 50px;
+    // background-color: lightgreen;
+    margin-left: auto;
+    margin-right: auto;
+
+    .header-links {
+      display: flex;
+      justify-content: space-between;
+      padding: 2em;
+
+      a {
+        text-decoration: none;
+        color: inherit;
+        font-family: "Noto Sans Mono", monospace;
+        padding: 10px;
+        border-radius: 15px;
+        box-shadow: 0 0 5px 1px #888888;
+      }
+
+      a:hover {
+        background-color: lightgrey;
+        transition: 0.5s;
+      }
+    }
+  }
+}
