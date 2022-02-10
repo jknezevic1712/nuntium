@@ -7,12 +7,23 @@
   margin-right: auto;
   margin-top: 2vh;
   border-radius: 15px;
-  padding: 10px;
+  padding: 10px 10px 5vh 10px;
   box-shadow: 0 0 50px 10px #888888;
+  background-image: linear-gradient(to top, #cfd9df 0%, #e2ebf0 100%);
 
   h1 {
-    font-size: 32px;
+    font-size: 3.5rem;
+    font-family: "Dancing Script", cursive;
+  }
+
+  button {
     font-family: "Noto Sans Mono", monospace;
+    font-weight: bold;
+    border: none;
+  }
+
+  a {
+    font-weight: bold;
   }
 
   .App-container {
@@ -20,6 +31,5 @@
     display: grid;
     align-content: center;
     height: 100%;
-    // background-color: lightblue;
   }
 }

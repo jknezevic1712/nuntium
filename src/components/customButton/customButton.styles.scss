@@ -1,0 +1,22 @@
+.customButton {
+  padding: 15px;
+  border-radius: 15px;
+  box-shadow: 0 0 5px 1px #888888;
+  background-color: transparent;
+
+  &:hover {
+    background-color: rgb(200, 200, 200);
+    transition: 0.5s;
+    cursor: pointer;
+  }
+
+  &.google-sign-in {
+    background-color: #4285f4;
+    color: white;
+
+    &:hover {
+      background-color: #0e65f1;
+      border: none;
+    }
+  }
+}

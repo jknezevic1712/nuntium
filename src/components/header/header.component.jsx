@@ -8,15 +8,35 @@ const Header = () => {
     <div className="header-container">
       <div className="header-innerContainer">
         <div className="header-links">
-          <Link to="/">
-            <span>First link</span>
+          <Link to="/contact">
+            <span>Contact</span>
           </Link>
           <Link to="/">
-            <span>Second link</span>
+            <span>Home</span>
           </Link>
-          <Link to="/">
-            <span>Third link</span>
-          </Link>
+
+          {/* {currentUser ? (
+            <div className="header-groupedLinks">
+              <Link to="/profile">
+                <span>Profile</span>
+              </Link>
+              <Link onClick={signOutStart}>
+                <span>Sign out</span>
+              </Link>
+            </div>
+          ) : (
+            <Link to="/login">
+              <span>Login</span>
+            </Link>
+          )} */}
+          <div className="header-groupedLinks">
+            <Link to="/profile">
+              <span>Profile</span>
+            </Link>
+            <Link to="/login">
+              <span>Login</span>
+            </Link>
+          </div>
         </div>
       </div>
     </div>

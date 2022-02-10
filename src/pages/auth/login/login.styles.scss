@@ -1,0 +1,68 @@
+.login-container {
+  width: 75%;
+  box-shadow: 0 0 5px 1px #888888;
+  padding: 10px;
+  border-radius: 15px;
+  margin: 0 auto;
+
+  .login-innerContainer {
+    display: grid;
+    grid-template-columns: 1fr;
+
+    .login-register {
+      display: flex;
+      justify-content: flex-end;
+      padding: 1em;
+
+      h3 {
+        margin-right: 2em;
+      }
+
+      a {
+        text-decoration: none;
+        color: inherit;
+        font-family: "Noto Sans Mono", monospace;
+        padding: 15px;
+        border-radius: 15px;
+        box-shadow: 0 0 5px 1px #888888;
+      }
+
+      a:hover {
+        background-color: lightgrey;
+        transition: 0.5s;
+      }
+    }
+
+    .login-google {
+      display: flex;
+      justify-content: flex-end;
+      padding: 1em;
+      font-weight: bold;
+
+      h3 {
+        margin-right: 2em;
+      }
+    }
+
+    .login-formContainer {
+      .login-form {
+        display: flex;
+        justify-content: center;
+        width: 100%;
+
+        form {
+          display: flex;
+          flex-direction: column;
+        }
+
+        .login-button {
+          margin: 1em 0;
+
+          button {
+            width: 80%;
+          }
+        }
+      }
+    }
+  }
+}

@@ -9,7 +9,7 @@ const Banner = () => {
       <div
         className="banner-image"
         style={{
-          backgroundImage: `url(https://image.freepik.com/free-photo/woman-working-from-home-during-coronavirus-quarantine_53876-148002.jpg)`,
+          backgroundImage: `url(https://francis.ventures/wp-content/uploads/2018/03/nest-blog-banner.jpg)`,
         }}
       />
     </div>

@@ -1,0 +1,34 @@
+.profile-container {
+  .profile-banner {
+    width: 100%;
+    height: 300px;
+    margin-bottom: 2vw;
+  }
+
+  .profile-formContainer {
+    width: 75%;
+    box-shadow: 0 0 5px 1px #888888;
+    padding: 10px;
+    border-radius: 15px;
+    margin: 0 auto;
+
+    .profile-form {
+      display: flex;
+      justify-content: center;
+      width: 100%;
+
+      form {
+        display: flex;
+        flex-direction: column;
+      }
+
+      .profile-button {
+        margin: 1em 0;
+
+        button {
+          width: 80%;
+        }
+      }
+    }
+  }
+}

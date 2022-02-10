@@ -1,0 +1,14 @@
+.categories-container {
+  .categories-banner {
+    width: 100%;
+    height: 300px;
+    margin-bottom: 2vw;
+  }
+
+  .categories-tiles {
+    padding: 10px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 2vw;
+  }
+}

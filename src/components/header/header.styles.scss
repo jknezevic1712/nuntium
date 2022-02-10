@@ -16,14 +16,13 @@
     display: grid;
     align-content: center;
     height: 50px;
-    // background-color: lightgreen;
     margin-left: auto;
     margin-right: auto;
 
     .header-links {
       display: flex;
       justify-content: space-between;
-      padding: 2em;
+      padding: 1em;
 
       a {
         text-decoration: none;
@@ -35,8 +34,24 @@
       }
 
       a:hover {
-        background-color: lightgrey;
+        background-color: rgb(200, 200, 200);
         transition: 0.5s;
+      }
+
+      a:nth-child(2) {
+        margin-left: 5rem;
+      }
+
+      .header-groupedLinks {
+        display: flex;
+
+        a:first-child {
+          margin-right: 10px;
+        }
+
+        a:last-child {
+          margin-left: 0;
+        }
       }
     }
   }

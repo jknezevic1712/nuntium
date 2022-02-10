@@ -1,4 +1,4 @@
-.tile-container {
+.homepageTile-container {
   border-radius: 15px;
   box-shadow: 0 0 5px 1px #888888;
   position: relative;
@@ -9,12 +9,12 @@
     cursor: pointer;
     transition: 0.2s;
 
-    .tile-image {
+    .homepageTile-image {
       opacity: 0.35;
       transition: 0.5s;
     }
 
-    .tile-content {
+    .homepageTile-content {
       opacity: 1;
       height: auto;
     }
@@ -25,7 +25,7 @@
     color: inherit;
   }
 
-  .tile-image {
+  .homepageTile-image {
     width: 100%;
     height: 100%;
     background-size: cover;
@@ -33,7 +33,7 @@
     border-radius: 15px;
   }
 
-  .tile-content {
+  .homepageTile-content {
     position: absolute;
     top: 50%;
     left: 50%;
