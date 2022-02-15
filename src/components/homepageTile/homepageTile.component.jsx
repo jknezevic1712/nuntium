@@ -6,7 +6,7 @@ import "./homepageTile.styles.scss";
 const HomepageTile = ({ categoryId, categoryName, categoryImage }) => {
   return (
     <div className="homepageTile-container">
-      <Link to={`/categories/` + categoryName}>
+      <Link to={`/blogs/` + categoryName}>
         <div
           className="homepageTile-image"
           style={{ backgroundImage: `url(${categoryImage})` }}

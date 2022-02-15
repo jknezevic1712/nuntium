@@ -6,9 +6,9 @@
   }
 
   .homepage-tiles {
-    padding: 10px;
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    grid-gap: 2vw;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2em;
+    justify-content: center;
   }
 }

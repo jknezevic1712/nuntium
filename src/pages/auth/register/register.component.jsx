@@ -1,27 +1,52 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
+import { connect } from "react-redux";
 
 import FormInput from "../../../components/formInput/formInput.component";
 import CustomButton from "../../../components/customButton/customButton.component";
 import Title from "../../../components/title/title.component";
 
+import { signUpStart } from "../../../redux/user/user.actions";
+
 import "./register.styles.scss";
 
-const Register = () => {
+const Register = ({ signUpStart }) => {
   const [userCredentials, setUserCredentials] = useState({
-    name: "",
+    displayName: "",
     email: "",
-    // country: "",
     password: "",
     confirmPassword: "",
   });
 
-  const { email, name, password, confirmPassword } = userCredentials;
+  const initialState = {
+    displayName: "",
+    email: "",
+    password: "",
+    confirmPassword: "",
+  };
+
+  const { email, displayName, password, confirmPassword } = userCredentials;
 
   const handleChange = (e) => {
     const { value, name } = e.target;
 
     setUserCredentials({ ...userCredentials, [name]: value });
+  };
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+
+    if (password !== confirmPassword) {
+      alert("Passwords don't match");
+      return;
+    } else if (password.length < 6) {
+      alert("Password needs to be atleast 6 characters long!");
+      return;
+    }
+
+    setUserCredentials(initialState);
+
+    signUpStart({ displayName, email, password });
   };
 
   return (
@@ -38,11 +63,11 @@ const Register = () => {
           <div className="register-formContainer">
             <h1>Register</h1>
             <div className="register-form">
-              <form>
+              <form onSubmit={handleSubmit}>
                 <FormInput
-                  name="name"
+                  name="displayName"
                   type="text"
-                  value={name}
+                  value={displayName}
                   handleChange={handleChange}
                   label="Name"
                   required
@@ -83,4 +108,8 @@ const Register = () => {
   );
 };
 
-export default Register;
+const mapDispatchToProps = (dispatch) => ({
+  signUpStart: (userCredentials) => dispatch(signUpStart(userCredentials)),
+});
+
+export default connect(null, mapDispatchToProps)(Register);

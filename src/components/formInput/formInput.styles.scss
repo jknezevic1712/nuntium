@@ -10,10 +10,11 @@ $main-color: black;
 .group {
   position: relative;
   margin: 0;
+  font-family: "Noto Sans Mono", monospace;
 
   .formInput {
     background: none;
-    background-color: white;
+    background-color: #eff6fb;
     color: $sub-color;
     font-size: 18px;
     padding: 10px 10px 10px 5px;
@@ -26,6 +27,8 @@ $main-color: black;
 
     &:focus {
       outline: none;
+      color: $main-color;
+      background-color: white;
     }
 
     &:focus ~ .formInput-label {

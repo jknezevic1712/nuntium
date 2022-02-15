@@ -1,21 +1,34 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
+import { connect } from "react-redux";
 
 import Title from "../../components/title/title.component";
 import FormInput from "../../components/formInput/formInput.component";
 import CustomButton from "../../components/customButton/customButton.component";
 
+import { profileUpdateStartAsync } from "../../redux/profile/profile.actions";
+import { checkUserSession } from "../../redux/user/user.actions";
+
 import "./profile.styles.scss";
 
-const Profile = () => {
+const Profile = ({
+  currentUser,
+  profileUpdateStartAsync,
+  checkUserSession,
+}) => {
+  // const [userCredentials, setUserCredentials] = useState({
+  //   displayName: "Jakov Knežević",
+  //   email: "knezevic.jakov@gmail.com",
+  //   password: "12345",
+  //   confirmPassword: "",
+  // });
+
   const [userCredentials, setUserCredentials] = useState({
-    name: "Jakov Knežević",
-    email: "knezevic.jakov@gmail.com",
-    // country: "",
-    password: "12345",
-    confirmPassword: "",
+    displayName: currentUser.displayName,
+    email: currentUser.email,
+    id: currentUser.id,
   });
 
-  const { email, name, password, confirmPassword } = userCredentials;
+  const { email, displayName, id } = userCredentials;
 
   const handleChange = (e) => {
     const { value, name } = e.target;
@@ -23,17 +36,34 @@ const Profile = () => {
     setUserCredentials({ ...userCredentials, [name]: value });
   };
 
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+
+    const profileDataForUpdate = {
+      email,
+      displayName,
+      id,
+    };
+
+    profileUpdateStartAsync(id, profileDataForUpdate);
+    checkUserSession();
+  };
+
+  useEffect(() => {
+    checkUserSession();
+  }, [checkUserSession]);
+
   return (
     <div className="profile-container">
       <Title />
       <div className="profile-formContainer">
         <h1>Profile</h1>
         <div className="profile-form">
-          <form>
+          <form onSubmit={handleSubmit}>
             <FormInput
-              name="name"
+              name="displayName"
               type="text"
-              value={name}
+              value={displayName}
               handleChange={handleChange}
               label="Name"
               required
@@ -46,7 +76,7 @@ const Profile = () => {
               label="E-mail"
               required
             />
-            <FormInput
+            {/* <FormInput
               name="password"
               type="password"
               value={password}
@@ -61,7 +91,7 @@ const Profile = () => {
               handleChange={handleChange}
               label="Confirm password"
               required
-            />
+            /> */}
             <div className="profile-button">
               <CustomButton type="submit">Update</CustomButton>
             </div>
@@ -72,4 +102,10 @@ const Profile = () => {
   );
 };
 
-export default Profile;
+const mapDispatchToProps = (dispatch) => ({
+  profileUpdateStartAsync: (id, profileDataForUpdate) =>
+    dispatch(profileUpdateStartAsync(id, profileDataForUpdate)),
+  checkUserSession: () => dispatch(checkUserSession()),
+});
+
+export default connect(null, mapDispatchToProps)(Profile);

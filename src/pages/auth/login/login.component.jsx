@@ -1,17 +1,28 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
+import { connect } from "react-redux";
 
 import FormInput from "../../../components/formInput/formInput.component";
 import CustomButton from "../../../components/customButton/customButton.component";
 import Title from "../../../components/title/title.component";
 
+import {
+  googleSignInStart,
+  emailSignInStart,
+} from "../../../redux/user/user.actions";
+
 import "./login.styles.scss";
 
-const Login = () => {
+const Login = ({ emailSignInStart, googleSignInStart }) => {
   const [userCredentials, setUserCredentials] = useState({
     email: "",
     password: "",
   });
+
+  const initialState = {
+    email: "",
+    password: "",
+  };
 
   const { email, password } = userCredentials;
 
@@ -19,6 +30,14 @@ const Login = () => {
     const { value, name } = e.target;
 
     setUserCredentials({ ...userCredentials, [name]: value });
+  };
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+
+    setUserCredentials(initialState);
+
+    emailSignInStart(email, password);
   };
 
   return (
@@ -34,12 +53,14 @@ const Login = () => {
           </div>
           <div className="login-google">
             <h3>You can sign in using Google aswell!</h3>
-            <CustomButton isGoogleSignIn>Google Sign In</CustomButton>
+            <CustomButton isGoogleSignIn onClick={googleSignInStart}>
+              Google Sign In
+            </CustomButton>
           </div>
           <div className="login-formContainer">
             <h1>Login</h1>
             <div className="login-form">
-              <form>
+              <form onSubmit={handleSubmit}>
                 <FormInput
                   name="email"
                   type="email"
@@ -68,4 +89,10 @@ const Login = () => {
   );
 };
 
-export default Login;
+const mapDispatchToProps = (dispatch) => ({
+  googleSignInStart: () => dispatch(googleSignInStart()),
+  emailSignInStart: (email, password) =>
+    dispatch(emailSignInStart({ email, password })),
+});
+
+export default connect(null, mapDispatchToProps)(Login);

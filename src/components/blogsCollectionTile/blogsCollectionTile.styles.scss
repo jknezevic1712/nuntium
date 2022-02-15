@@ -1,4 +1,4 @@
-.categoriesTile-container {
+.blogsCollectionTile-container {
   border-radius: 15px;
   box-shadow: 0 0 5px 1px #888888;
   position: relative;
@@ -9,7 +9,7 @@
     cursor: pointer;
     transition: 0.2s;
 
-    .categoriesTile-bg {
+    .blogsCollectionTile-bg {
       opacity: 0.5;
       transition: 0.5s;
     }
@@ -20,7 +20,7 @@
     color: inherit;
   }
 
-  .categoriesTile-bg {
+  .blogsCollectionTile-bg {
     width: 100%;
     height: 100%;
     background-size: cover;
@@ -28,7 +28,7 @@
     border-radius: 15px;
   }
 
-  .categoriesTile-content {
+  .blogsCollectionTile-content {
     width: 85%;
     position: absolute;
     top: 50%;
