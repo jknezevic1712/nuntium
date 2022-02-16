@@ -11,14 +11,8 @@ import BlogsCollection from "../blogs-collection/blogs-collection.component";
 import { fetchCollectionsStartAsync } from "../../redux/blogs-collection/blogs-collection.actions";
 
 import { selectCollectionsForView } from "../../redux/blogs-collection/blogs-collection.selectors";
-import { selectCollectionDetails } from "../../redux/blogs-collection/blogs-collection.selectors";
 
-const Homepage = ({
-  fetchCollectionsStartAsync,
-  match,
-  blogs,
-  blogsDetails,
-}) => {
+const Homepage = ({ fetchCollectionsStartAsync, match, blogs }) => {
   useEffect(() => {
     fetchCollectionsStartAsync();
   }, [fetchCollectionsStartAsync]);
@@ -30,11 +24,7 @@ const Homepage = ({
         <Banner />
       </div>
       <div className="homepage-tiles">
-        <BlogsCollection
-          match={match}
-          blogs={blogs}
-          blogsDetails={blogsDetails}
-        />
+        <BlogsCollection match={match} blogs={blogs} />
       </div>
     </div>
   );
@@ -42,7 +32,6 @@ const Homepage = ({
 
 const mapStateToProps = createStructuredSelector({
   blogs: selectCollectionsForView,
-  blogsDetails: selectCollectionDetails,
 });
 
 const mapDispatchToProps = (dispatch) => ({

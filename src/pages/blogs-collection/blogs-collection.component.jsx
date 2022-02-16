@@ -11,7 +11,6 @@ const BlogsCollection = ({ blogs }) => {
         key={blogs.id}
         blogId={blogs.id}
         blogTitle={blogs.title}
-        blogContent={blogs.content}
         blogAuthor={blogs.author}
       />
     );

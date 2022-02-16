@@ -11,8 +11,8 @@ import Header from "./components/header/header.component";
 import Spinner from "./components/spinner/spinner.component";
 
 const Homepage = lazy(() => import("./pages/homepage/homepage.component"));
-const BlogsCollectionContainer = lazy(() =>
-  import("./pages/blogs-collection/blogs-collection.container")
+const BlogPageContainer = lazy(() =>
+  import("./components/blog-page/blog-page.container")
 );
 const Login = lazy(() => import("./pages/auth/login/login.component"));
 const Register = lazy(() => import("./pages/auth/register/register.component"));
@@ -36,11 +36,7 @@ const App = () => {
         <Switch>
           <Suspense fallback={<Spinner />}>
             <Route exact path="/" component={Homepage} />
-            <Route
-              exact
-              path="/blogs/:urlID"
-              component={BlogsCollectionContainer}
-            />
+            <Route exact path="/blogs/:urlID" component={BlogPageContainer} />
             <Route
               exact
               path="/login"

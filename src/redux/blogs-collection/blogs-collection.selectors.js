@@ -14,7 +14,7 @@ export const selectCollectionsForView = memoize(
   )
 );
 
-export const selectCollectionDetails = memoize((urlID) =>
+export const selectBlogDetails = memoize((urlID) =>
   createSelector([selectCollection], (collection) =>
     collection ? collection[urlID] : null
   )

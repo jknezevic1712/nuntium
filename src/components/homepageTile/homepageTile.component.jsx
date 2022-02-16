@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 
 import "./homepageTile.styles.scss";
 
-const HomepageTile = ({ categoryId, categoryName, categoryImage }) => {
+const HomepageTile = ({ categoryName, categoryImage }) => {
   return (
     <div className="homepageTile-container">
       <Link to={`/blogs/` + categoryName}>

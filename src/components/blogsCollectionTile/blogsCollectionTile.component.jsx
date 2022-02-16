@@ -13,25 +13,10 @@ const generateRandomColor = () => {
   return "rgb(" + r + ", " + g + ", " + b + ")";
 };
 
-const BlogsCollectionTile = ({
-  blogId,
-  blogTitle,
-  blogContent,
-  blogAuthor,
-}) => {
+const BlogsCollectionTile = ({ blogId, blogTitle, blogAuthor }) => {
   return (
     <div className="blogsCollectionTile-container">
-      <Link
-        to={`/blogs/` + blogId}
-        component={
-          <BlogPage
-            blogId={blogId}
-            blogTitle={blogTitle}
-            blogContent={blogContent}
-            blogAuthor={blogAuthor}
-          />
-        }
-      >
+      <Link to={`/blogs/` + blogId}>
         <div
           className="blogsCollectionTile-bg"
           style={{ backgroundColor: generateRandomColor() }}

@@ -75,12 +75,14 @@ export const updateProfileData = async (userId, profileData) => {
 
 export const convertCollectionsSnapshotToMap = (collections) => {
   const transformedCollection = collections.docs.map((doc) => {
-    const { title, content, author } = doc.data();
+    const { title, paragraph1, paragraph2, paragraph3, author } = doc.data();
 
     return {
       id: doc.id,
       title,
-      content,
+      paragraph1,
+      paragraph2,
+      paragraph3,
       author,
     };
   });
