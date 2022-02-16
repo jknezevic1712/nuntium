@@ -1,6 +1,8 @@
 import React from "react";
 import { Link } from "react-router-dom";
 
+import BlogPage from "../blog-page/blog-page.component";
+
 import "./blogsCollectionTile.styles.scss";
 
 const generateRandomColor = () => {
@@ -12,21 +14,31 @@ const generateRandomColor = () => {
 };
 
 const BlogsCollectionTile = ({
-  postId,
-  postName,
-  postAuthor,
-  postCategory,
+  blogId,
+  blogTitle,
+  blogContent,
+  blogAuthor,
 }) => {
   return (
     <div className="blogsCollectionTile-container">
-      <Link to={`/` + postCategory + `/` + postId}>
+      <Link
+        to={`/blogs/` + blogId}
+        component={
+          <BlogPage
+            blogId={blogId}
+            blogTitle={blogTitle}
+            blogContent={blogContent}
+            blogAuthor={blogAuthor}
+          />
+        }
+      >
         <div
           className="blogsCollectionTile-bg"
           style={{ backgroundColor: generateRandomColor() }}
         />
         <div className="blogsCollectionTile-content">
-          <h2>{postName}</h2>
-          <span>{`Author: ` + postAuthor}</span>
+          <h2>{blogTitle}</h2>
+          <span>{`Author: ` + blogAuthor}</span>
         </div>
       </Link>
     </div>

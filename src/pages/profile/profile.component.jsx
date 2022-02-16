@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import { connect } from "react-redux";
 
 import Title from "../../components/title/title.component";
@@ -15,13 +15,6 @@ const Profile = ({
   profileUpdateStartAsync,
   checkUserSession,
 }) => {
-  // const [userCredentials, setUserCredentials] = useState({
-  //   displayName: "Jakov Knežević",
-  //   email: "knezevic.jakov@gmail.com",
-  //   password: "12345",
-  //   confirmPassword: "",
-  // });
-
   const [userCredentials, setUserCredentials] = useState({
     displayName: currentUser.displayName,
     email: currentUser.email,
@@ -49,10 +42,6 @@ const Profile = ({
     checkUserSession();
   };
 
-  useEffect(() => {
-    checkUserSession();
-  }, [checkUserSession]);
-
   return (
     <div className="profile-container">
       <Title />
@@ -76,22 +65,6 @@ const Profile = ({
               label="E-mail"
               required
             />
-            {/* <FormInput
-              name="password"
-              type="password"
-              value={password}
-              handleChange={handleChange}
-              label="Password"
-              required
-            />
-            <FormInput
-              name="confirmPassword"
-              type="password"
-              value={confirmPassword}
-              handleChange={handleChange}
-              label="Confirm password"
-              required
-            /> */}
             <div className="profile-button">
               <CustomButton type="submit">Update</CustomButton>
             </div>

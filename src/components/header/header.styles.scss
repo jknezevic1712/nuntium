@@ -38,10 +38,6 @@
         transition: 0.5s;
       }
 
-      a:nth-child(2) {
-        margin-left: 5rem;
-      }
-
       .header-groupedLinks {
         display: flex;
 
@@ -53,6 +49,10 @@
           margin-left: 0;
         }
       }
+    }
+
+    .header-link-margin {
+      margin-left: 7rem;
     }
   }
 }

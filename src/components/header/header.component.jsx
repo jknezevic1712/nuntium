@@ -16,23 +16,33 @@ const Header = ({ currentUser, signOutStart }) => {
           <Link to="/contact">
             <span>Contact</span>
           </Link>
-          <Link to="/">
+          {/* <Link to="/">
             <span>Home</span>
-          </Link>
+          </Link> */}
 
           {currentUser ? (
-            <div className="header-groupedLinks">
-              <Link to="/profile">
-                <span>Profile</span>
+            <>
+              <Link to="/" className="header-link-margin">
+                <span>Home</span>
               </Link>
-              <Link to="/" onClick={signOutStart}>
-                <span>Sign out</span>
-              </Link>
-            </div>
+              <div className="header-groupedLinks">
+                <Link to="/profile">
+                  <span>Profile</span>
+                </Link>
+                <Link to="/" onClick={signOutStart}>
+                  <span>Sign out</span>
+                </Link>
+              </div>
+            </>
           ) : (
-            <Link to="/login">
-              <span>Login</span>
-            </Link>
+            <>
+              <Link to="/">
+                <span>Home</span>
+              </Link>
+              <Link to="/login">
+                <span>Login</span>
+              </Link>
+            </>
           )}
         </div>
       </div>
