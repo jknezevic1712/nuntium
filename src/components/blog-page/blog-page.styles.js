@@ -57,6 +57,11 @@ export const BlogPageImg = styled.figure`
   width: 1024px;
   padding: 2em 0 5em 0;
 
+  &:hover {
+    transform: scale(1.1);
+    transition: transform 0.75s cubic-bezier(0.25, 0.45, 0.45, 0.95);
+  }
+
   img {
     height: 600px;
     width: 1024px;
