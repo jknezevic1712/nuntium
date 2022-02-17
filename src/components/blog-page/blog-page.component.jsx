@@ -7,7 +7,9 @@ import {
   BlogPageInnerContainer,
   BlogPageContent,
   BlogPageTitle,
-  BlogPageParagraphs,
+  BlogPagePgs,
+  BlogPagePg,
+  BlogPageImg,
 } from "./blog-page.styles";
 
 const BlogPage = ({ blogDetails }) => {
@@ -23,19 +25,19 @@ const BlogPage = ({ blogDetails }) => {
             {<h2>{title}</h2>}
             <span>{author}</span>
           </BlogPageTitle>
-          <BlogPageParagraphs>
-            <div className="blogPage-paragraph1">{<p>{paragraph1}</p>}</div>
-            <figure>
+          <BlogPagePgs>
+            <BlogPagePg>{<p>{paragraph1}</p>}</BlogPagePg>
+            <BlogPageImg>
               <img src={img1.url} alt={img1.caption} />
               <figcaption>{img1.caption}</figcaption>
-            </figure>
-            <div className="blogPage-paragraph2">{<p>{paragraph2}</p>}</div>
-            <figure>
+            </BlogPageImg>
+            <BlogPagePg>{<p>{paragraph2}</p>}</BlogPagePg>
+            <BlogPageImg>
               <img src={img2.url} alt={img2.caption} />
               <figcaption>{img2.caption}</figcaption>
-            </figure>
-            <div className="blogPage-paragraph3">{<p>{paragraph3}</p>}</div>
-          </BlogPageParagraphs>
+            </BlogPageImg>
+            <BlogPagePg>{<p>{paragraph3}</p>}</BlogPagePg>
+          </BlogPagePgs>
         </BlogPageContent>
       </BlogPageInnerContainer>
     </div>

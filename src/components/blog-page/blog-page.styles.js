@@ -43,10 +43,31 @@ export const BlogPageTitle = styled.div`
   }
 `;
 
-export const BlogPageParagraphs = styled.div`
+export const BlogPagePgs = styled.div`
   line-height: 2;
 `;
 
-export const BlogPageParagrah = styled.div``;
+export const BlogPagePg = styled.div``;
 
-export const BlogPageImage = styled.figure``;
+export const BlogPageImg = styled.figure`
+  display: flex;
+  flex-direction: column;
+  margin: 0 auto;
+  height: 600px;
+  width: 1024px;
+  padding: 2em 0 5em 0;
+
+  img {
+    height: 600px;
+    width: 1024px;
+    box-shadow: 0 0 5px 1px #888888;
+    border-radius: 15px;
+  }
+
+  figcaption {
+    margin-top: 0.5em;
+    font-family: "Lobster", cursive;
+    font-size: 1.5rem;
+    font-weight: normal;
+  }
+`;
