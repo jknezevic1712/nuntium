@@ -42,7 +42,11 @@ const App = () => {
               path="/login"
               render={() => (currentUser ? <Redirect to="/" /> : <Login />)}
             />
-            <Route exact path="/register" component={Register} />
+            <Route
+              exact
+              path="/register"
+              render={() => (currentUser ? <Redirect to="/" /> : <Register />)}
+            />
             <Route exact path="/profile" component={ProfileContainer} />
             <Route exact path="/contact" component={Contact} />
           </Suspense>
