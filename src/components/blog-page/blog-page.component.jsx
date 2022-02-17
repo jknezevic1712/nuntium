@@ -2,8 +2,8 @@ import React from "react";
 
 import Title from "../title/title.component";
 
-import "./blog-page.styles.scss";
 import {
+  BlogPageContainer,
   BlogPageInnerContainer,
   BlogPageContent,
   BlogPageTitle,
@@ -17,7 +17,7 @@ const BlogPage = ({ blogDetails }) => {
     blogDetails;
 
   return (
-    <div className="blogPage-container">
+    <BlogPageContainer>
       <Title />
       <BlogPageInnerContainer bg={bg}>
         <BlogPageContent>
@@ -40,7 +40,7 @@ const BlogPage = ({ blogDetails }) => {
           </BlogPagePgs>
         </BlogPageContent>
       </BlogPageInnerContainer>
-    </div>
+    </BlogPageContainer>
   );
 };
 

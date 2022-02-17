@@ -1,5 +1,10 @@
 import styled from "styled-components";
 
+export const BlogPageContainer = styled.div`
+  font-family: "Noto Sans Mono", monospace;
+  font-weight: bold;
+`;
+
 export const BlogPageInnerContainer = styled.div`
   position: relative;
   width: 85%;

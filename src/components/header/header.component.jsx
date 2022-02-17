@@ -16,9 +16,6 @@ const Header = ({ currentUser, signOutStart }) => {
           <Link to="/contact">
             <span>Contact</span>
           </Link>
-          {/* <Link to="/">
-            <span>Home</span>
-          </Link> */}
 
           {currentUser ? (
             <>
