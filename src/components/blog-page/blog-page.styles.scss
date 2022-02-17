@@ -1,42 +1,40 @@
 .blogPage-container {
-  //   font-family: "Lobster", cursive;
   font-family: "Noto Sans Mono", monospace;
   font-weight: bold;
 
   .blogPage-innerContainer {
+    position: relative;
     width: 85%;
     box-shadow: 0 0 5px 1px #888888;
     border-radius: 15px;
     margin: 0 auto;
-    display: grid;
-    grid-template-columns: 1fr;
-    position: relative;
-    height: 100vh;
+    padding: 0.5em 4em 0.5em 4em;
 
-    .blogPage-bg {
-      width: 100%;
-      height: 100%;
-      background-image: url("https://kafkadesk.org/wp-content/uploads/2019/11/hungary-budapest.jpg");
-      background-size: cover;
-      background-position: center;
-      border-radius: 15px;
-      opacity: 0.3;
-    }
+    // .blogPage-bg {
+    //   width: 100%;
+    //   height: 100%;
+    //   background-image: url("https://kafkadesk.org/wp-content/uploads/2019/11/hungary-budapest.jpg");
+    //   background-size: cover;
+    //   background-position: center;
+    //   border-radius: 15px;
+    //   opacity: 0.2;
+    // }
 
     .blogPage-content {
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%);
-      padding: 10px;
-      //   transition: opacity 1s ease-out;
+      // position: absolute;
+      // top: 50%;
+      // left: 50%;
+      // transform: translate(-50%, -50%);
+      // width: 80%;
+      // padding: 0 1em 1em 1em;
+      position: relative;
 
       .blogPage-title {
         margin-bottom: 5em;
 
         h2 {
           font-family: "Dancing Script", cursive;
-          font-size: 3rem;
+          font-size: 3.5rem;
         }
 
         span {
@@ -45,6 +43,26 @@
           font-weight: normal;
         }
       }
+
+      .blogPage-paragraphs {
+        line-height: 2;
+      }
     }
+  }
+
+  .blogPage-innerContainer:before {
+    border-radius: 15px;
+    content: " ";
+    display: block;
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0.2;
+    background-image: url("https://kafkadesk.org/wp-content/uploads/2019/11/hungary-budapest.jpg");
+    background-repeat: no-repeat;
+    background-position: 50% 0;
+    background-size: cover;
   }
 }

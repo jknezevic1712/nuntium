@@ -43,26 +43,6 @@ export const createUserProfileDocument = async (userAuth, additionalData) => {
   return userRef;
 };
 
-// export const registerNewPet = async (registerNewData) => {
-//   const collectionRef = firestore.collection("pets-collection");
-//   const newDocRef = collectionRef.doc();
-//   const batch = firestore.batch();
-
-//   batch.set(newDocRef, registerNewData);
-
-//   return await batch.commit();
-// };
-
-// export const newVolunteerApplication = async (applicationData) => {
-//   const collectionRef = firestore.collection("volunteers");
-//   const newDocRef = collectionRef.doc();
-//   const batch = firestore.batch();
-
-//   batch.set(newDocRef, applicationData);
-
-//   return await batch.commit();
-// };
-
 export const updateProfileData = async (userId, profileData) => {
   const collectionRef = firestore.collection("users");
   const docRef = collectionRef.doc(userId);
@@ -75,7 +55,16 @@ export const updateProfileData = async (userId, profileData) => {
 
 export const convertCollectionsSnapshotToMap = (collections) => {
   const transformedCollection = collections.docs.map((doc) => {
-    const { title, paragraph1, paragraph2, paragraph3, author } = doc.data();
+    const {
+      title,
+      paragraph1,
+      paragraph2,
+      paragraph3,
+      author,
+      bg,
+      img1,
+      img2,
+    } = doc.data();
 
     return {
       id: doc.id,
@@ -84,6 +73,9 @@ export const convertCollectionsSnapshotToMap = (collections) => {
       paragraph2,
       paragraph3,
       author,
+      bg,
+      img1,
+      img2,
     };
   });
 
