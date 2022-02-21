@@ -24,20 +24,6 @@
       justify-content: space-between;
       padding: 1em;
 
-      a {
-        text-decoration: none;
-        color: inherit;
-        font-family: "Noto Sans Mono", monospace;
-        padding: 10px;
-        border-radius: 15px;
-        box-shadow: 0 0 5px 1px #888888;
-      }
-
-      a:hover {
-        background-color: rgb(200, 200, 200);
-        transition: 0.5s;
-      }
-
       .header-groupedLinks {
         display: flex;
 
@@ -49,10 +35,6 @@
           margin-left: 0;
         }
       }
-    }
-
-    .header-link-margin {
-      margin-left: 7rem;
     }
   }
 }

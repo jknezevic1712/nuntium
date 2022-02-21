@@ -1,10 +1,10 @@
 import React, { useState } from "react";
-import { Link } from "react-router-dom";
 import { connect } from "react-redux";
 
 import FormInput from "../../../components/formInput/formInput.component";
 import CustomButton from "../../../components/customButton/customButton.component";
 import Title from "../../../components/title/title.component";
+import CustomLink from "../../../components/customLink/customLink.component";
 
 import {
   googleSignInStart,
@@ -47,9 +47,9 @@ const Login = ({ emailSignInStart, googleSignInStart }) => {
         <div className="login-innerContainer">
           <div className="login-register">
             <h3>Don't have an account?</h3>
-            <Link to="/register">
+            <CustomLink exPad to="/register">
               <span>Register</span>
-            </Link>
+            </CustomLink>
           </div>
           <div className="login-google">
             <h3>You can sign in using Google aswell!</h3>

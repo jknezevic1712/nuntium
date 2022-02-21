@@ -1,10 +1,10 @@
 import React, { useState } from "react";
-import { Link } from "react-router-dom";
 import { connect } from "react-redux";
 
 import FormInput from "../../../components/formInput/formInput.component";
 import CustomButton from "../../../components/customButton/customButton.component";
 import Title from "../../../components/title/title.component";
+import CustomLink from "../../../components/customLink/customLink.component";
 
 import { signUpStart } from "../../../redux/user/user.actions";
 
@@ -56,9 +56,9 @@ const Register = ({ signUpStart }) => {
         <div className="register-innerContainer">
           <div className="register-register">
             <h3>Already have an account?</h3>
-            <Link to="/login">
+            <CustomLink exPad to="/login">
               <span>Login</span>
-            </Link>
+            </CustomLink>
           </div>
           <div className="register-formContainer">
             <h1>Register</h1>
